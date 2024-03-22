@@ -1,6 +1,6 @@
 // "use client" 
 
-import fetchExercises from "@/lib/fetchExercises/fetchExercises"
+import fetchExercises from "@/unused_test_code/fetchExercises/fetchExercises"
 import type { Exercise } from "@/types/Exercise"
 import { useState, useEffect } from "react"
 import ExerciseList from "./components/ExerciseList/ExerciseList"

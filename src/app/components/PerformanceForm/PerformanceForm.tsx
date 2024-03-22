@@ -60,7 +60,7 @@ export default function PerformanceForm({performanceList, setPerformanceList, ex
       let calculatedRM : number = weight && reps ? Math.round(weight * (36/ (37 - reps))) : 0;
       let newPerformance = {
         id: crypto.randomUUID(),
-        time: new Date(),
+        time: (new Date()).toString(),
         reps: reps || 0,
         weight: weight || 0,
         exerciseId: exerciseId || "",
@@ -125,7 +125,7 @@ export default function PerformanceForm({performanceList, setPerformanceList, ex
             <input type="number" value={weight ? weight : ""} id="weight" onChange={(e) => setWeight(e.target.valueAsNumber)} className={`${errors ? errors.weightInput ? "border-red-600" : "border-black": ""} border rounded-[12px] h-[35px] w-[72px] px-2`}/>
           </div>
         </div>
-        <button className="bg-[#0085BF] h-[35px] w-[42px] rounded-[8px] ml-3 sm:ml-8 pb-[2px] font-[24] font-normal text-white">+</button>
+        <button aria-label="add new set" className="bg-[#0085BF] h-[35px] w-[42px] rounded-[8px] ml-3 sm:ml-8 pb-[2px] font-[24] font-normal text-white">+</button>
       </div>
     </form>
     </>

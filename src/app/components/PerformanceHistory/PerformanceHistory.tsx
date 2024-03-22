@@ -17,7 +17,7 @@ export default function PerformanceHistory({performanceList}: Props) {
             <ul className="md:flex md:flex-wrap md:justify-between">
               {date.data.map((performance : Performance) => {
                 return (
-                  <PerformanceHistoryItem performance={performance}/>
+                  <PerformanceHistoryItem key={performance.id} performance={performance}/>
                 )
               })}
             </ul>

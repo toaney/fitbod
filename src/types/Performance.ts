@@ -1,6 +1,6 @@
 export type Performance = {
   id: string,
-  time: Date,
+  time: string,
   reps: number,
   weight: number,
   exerciseId: string,
