@@ -1,5 +1,6 @@
 import type { Performance } from "@/types/Performance"
 import type { PerformanceGroup } from "@/types/Performance"
+import PerformanceHistoryItem from "../PerformanceHistoryItem/PerformanceHistoryItem"
 
 type Props = {
   performanceList: PerformanceGroup[],
@@ -13,20 +14,10 @@ export default function PerformanceHistory({performanceList}: Props) {
         return (
           <div key={date.id} className="mt-6 text-sm">
             <div className="font-bold">{date.id}</div>
-            {/* <div className="font-bold mb-6">03/23/2024</div> */}
-
             <ul className="md:flex md:flex-wrap md:justify-between">
               {date.data.map((performance : Performance) => {
                 return (
-                  <li key={performance.id} className="flex md:w-[250px] justify-between mt-6">
-                    <div>
-                      {performance.reps} x {performance.weight} lb
-                    </div>
-                    <div>
-                      <span className="font-bold">Estimated 1RM: </span> 
-                      {performance.estimated1RM} lb
-                    </div>
-                  </li>
+                  <PerformanceHistoryItem performance={performance}/>
                 )
               })}
             </ul>
